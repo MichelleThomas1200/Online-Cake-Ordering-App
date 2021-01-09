@@ -107,7 +107,7 @@
 							<div class= transbox><input type="text" name="password" autocomplete="off" class="form-control"></div>
 						</div>
 
-						<a href=homepg.php><button type="submit" class="btn btn-success">Log in</button></a>
+						<a href= "homepg.php"><button type="submit" class="btn btn-success">Log in</button></a>
 					</form>
 				</div>
 			</td>
