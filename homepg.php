@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -15,4 +16,14 @@
 		<?php include 'menu.php'  ?>
 
 	</body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title> </title>
+</head>
+<body>
+
+</body>
+>>>>>>> 34990cf31751b382192e25ee5c80e1acfd6bf963
 </html>
