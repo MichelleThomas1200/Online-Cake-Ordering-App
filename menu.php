@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	  	<div class="container-fluid">
-	    	<a class="navbar-brand" href="#">Michelle</a>
+	    	<a class="navbar-brand" href="#">Welcome</a>
 	    	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	      		<span class="navbar-toggler-icon"></span>
 	    	</button>
@@ -12,7 +12,7 @@
 			        </li>
 		            
 			        <li class="nav-item">
-			          <a class="nav-link" href="homepg.php/#Services at bottom">Services</a> <!--the slash n has text added-->
+			          <a class="nav-link" href="homepg.php>Services</a> <!--the slash n has text added-->
 			        </li>
 		            <li class="nav-item">
 			          <a class="nav-link" href="about.php">About</a>
