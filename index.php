@@ -10,7 +10,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/style.css">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-	<title>Just Cakes</title>
+	<title>Just Cakes</title> 
 	<style>
 		.button {
 		  background-color: #4CAF50; /* Green */
@@ -73,7 +73,7 @@ session_start();
 
 	<?php
 		include 'userinfo.php';
-		if(isset($_POST['signup'])) //checking if login has been clicked
+		if(isset($_POST['signup'])) //checking if SIGN UP has been clicked
 		{
 			$user=$_POST['user'];
 			$email=$_POST['email'];
@@ -103,7 +103,7 @@ session_start();
 
 	<?php
 		include 'userinfo.php';
-		if(isset($_POST['login'])) //checking if login has been clicked
+		if(isset($_POST['login'])) //checking if LOG IN has been clicked 
 		{
 			$emailid=$_POST['logemail'];
 			$password=$_POST['logpassword'];
@@ -139,14 +139,40 @@ session_start();
 					<?php
 				}
 				
-			} else{
-				?>
-				<script>
-					alert("Wrong Email ID");
-				</script>
-				<?php
-			}
+			} 
+			else
+			{
+					$admin_search="select AdName, AdPword from admin where admin_ID=1;";
+					$query2=mysqli_query($con, $admin_search);
+					$adcount=mysqli_num_rows($query2);
+					if($adcount)
+					{
+						$ad_pass=mysqli_fetch_assoc	($query2);
+						$root_pass=$ad_pass["AdPword"];
+						$_SESSION['AdPword']=$ad_pass['AdPword'];
+						$pass_check=password_verify($password, $root_pass);
+						if($password==$root_pass){
+							echo "login successful";
+							?>
+							<script>
+								location.replace("admin.php");
+							</script>
+							<?php
+						}
+					}
+					else{
 
+
+
+
+
+					?>
+					<script>
+						alert("Wrong Email ID");
+					</script>
+					<?php
+					}
+			}
 
 		}
 	?>
