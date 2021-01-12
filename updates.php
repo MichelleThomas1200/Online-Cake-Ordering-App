@@ -42,25 +42,65 @@ error_reporting(E_ALL);
 							<form action="" method="POST">
 								<div class="row register-form">
 
+									<?php
+											include 'userinfo.php';
+
+											$ids=$_GET['id'];
+											$showquery= "select * from cakes where CakeID=$ids;";
+											$showdata=mysqli_query($con, $showquery); //returns in array form
+											$arrdata=mysqli_fetch_array($showdata);	
+
+
+											if (isset($_POST['submit']))
+											{
+												$idupdate=$_GET['id'];
+
+												$name=$_POST['CakeName'];
+												$desc=$_POST['Description'];
+												$piclink=$_POST['image'];
+												$cost=$_POST['Price'];
+						
+												/*$insertquery="INSERT INTO cakes(CakeName, Description, Price, image) VALUES ('$name','$desc','$cost','$piclink')"; */
+
+												$updatequery="update cakes set CakeID='$ids', CakeName='$name', description='$desc', price='$cost' where CakeID='$idupdate';";
+
+
+												$res=mysqli_query($con, $updatequery);
+												if($res){
+													?>
+														<script>
+															alert("Row Updated");
+														</script>
+													<?php
+												}else{
+													?>
+													<script>
+														alert("Row not updated");
+													</script>
+													<?php
+												}
+											}
+									?>
+
 									<div class="col-md-6">
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="enter cake name *" name="CakeName" value="" required/>
+											<input type="text" class="form-control" placeholder="enter cake name *" name="CakeName" value="<?php echo $arrdata['CakeName'];?>" required/>
 										</div>										
 									
 
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="enter description of cake *" name="Description" value="" required/>											
+											<input type="text" class="form-control" placeholder="enter description of cake *" name="Description" value="<?php echo $arrdata['Description']; ?>" required/>											
 										</div>	
 
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="enter link for the image in Images folder *" name="image" value="" required/>											
+											<input type="text" class="form-control" placeholder="enter link for the image in Images folder *" name="image" value="<?php echo $arrdata['image']; ?>" required/>											
 										</div>	
 
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="enter Cost of 1 kg *" name="Price" value="" required/>											
+											<input type="text" class="form-control" placeholder="enter Cost of 1 kg *" name="Price" value="<?php echo $arrdata['Price']; ?>" required/>											
 										</div>		
 
-										<input type="submit" class="btnRegister" name="submit" value="Insert">
+										<input type="submit" class="btnRegister" name="submit" value="Update">
 
 									</div>
 									
@@ -85,29 +125,9 @@ error_reporting(E_ALL);
 		  	<button type="button" name="logout"><a href="logout.php">Log Out</a></button>
 	</footer>
 </html>
-<?php
-	include 'userinfo.php';
 
-	if (isset($_POST['submit'])){
-		$name=$_POST['CakeName'];
-		$desc=$_POST['Description'];
-		$piclink=$_POST['image'];
-		$cost=$_POST['Price'];
-		
-		$insertquery="INSERT INTO cakes(CakeName, Description, Price, image) VALUES ('$name','$desc','$cost','$piclink')";
-		$res=mysqli_query($con, $insertquery);
-		if($res){
-			?>
-				<script>
-					alert("Row Inserted");
-				</script>
-			<?php
-		}else{
-			?>
-			<script>
-				alert("Data not inserted");
-			</script>
-			<?php
-		}
-	}
+
+
+<?php
+
 ?>

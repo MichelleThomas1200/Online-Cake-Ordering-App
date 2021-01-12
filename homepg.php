@@ -29,7 +29,7 @@
 		<?php include 'menu.php'  ?>
         <br>
 
-
+        <?php include 'shopcart.php'  ?>
 		
 
 

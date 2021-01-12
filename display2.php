@@ -31,7 +31,6 @@
 								<th>Phone number</th>
 								<th>Delivery Date</th>
 								<th>Delivery Address</th>
-								<th colspan="2">Operation</th>
 							</tr>
 						</thead>
 
@@ -59,9 +58,6 @@
 										<td><?php echo $row['CustPhone']; ?></td>
 										<td><?php echo $row['DelDate']; ?></td>
 										<td><?php echo $row['DelAddress']; ?></td>
-
-										<td><i class="fa fa-edit" aria-hidden="true"></i></td>
-										<td><i class="fa fa-trash" aria-hidden="true"></i></td>
 									</tr>
 
 									<?php

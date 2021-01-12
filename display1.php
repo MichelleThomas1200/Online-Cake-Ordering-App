@@ -55,8 +55,8 @@
 										<td><?php echo $row['Description']; ?></td>
 										<td><?php echo $row['Price']; ?></td>
 										<td><?php echo $row['image']; ?></td>
-										<td><i class="fa fa-edit" aria-hidden="true"></i></td>
-										<td><i class="fa fa-trash" aria-hidden="true"></i></td>
+										<td><a href="updates.php?id=<?php echo $row['CakeID']; ?>" data-toggle="tooltip" data-placement="top" title="Update"> <i class="fa fa-edit" aria-hidden="true"></i></a></td>
+										<td><a href="deletes.php?id=<?php echo $row['CakeID']; ?>" data-toggle="tooltip" data-placement="top" title="Delete"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
 									</tr>
 
 									<?php
@@ -103,8 +103,9 @@
 									<tr>
 										<td><?php echo $row['Weight']; ?></td>
 										<td><?php echo $row['Incr']; ?></td>	
-										<td><i class="fa fa-edit" aria-hidden="true"></i></td>
-										<td><i class="fa fa-trash" aria-hidden="true"></i></td>
+										<!-- <td> <a href="#" data-toggle="tooltip" data-placement="top" title="Update">  <i class="fa fa-edit" aria-hidden="true"></i> </a> 
+										</td>
+										<td> <a href="#" data-toggle="tooltip" data-placement="top" title="Delete"> <i class="fa fa-trash" aria-hidden="true"></i> </a> </td> -->
 									</tr>
 
 									<?php
@@ -117,6 +118,13 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+			$(document).ready(function(){
+					$('[data-toggle="tooltip"]').tooltip();
+			});
+		</script> 
+
 	</body>
 	<footer>
 		  	<button type="button"><a href="admin.php">Form Insertion</a></button>
