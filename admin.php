@@ -30,7 +30,7 @@ error_reporting(E_ALL);
 					<img src="Images/Logo.png" alt=""/>
 					<h3>Welcome</h3>
 					<p>
-						You are authorised to edit the tables if need be.</p><p> You must be the manager. </p>
+						You are authorised to insert to the Menu if need be.</p><p> You must be the manager. </p>
 					<a href="display1.php">Check form</a><br>					
 				</div>
 

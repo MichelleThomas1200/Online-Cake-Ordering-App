@@ -3,7 +3,7 @@
 $con = mysqli_connect('localhost', 'root', '', 'belmic');
 
 if($con){
-	echo "Connection successful";
+	//echo "Connection successful";
 }
 else{
 	?>

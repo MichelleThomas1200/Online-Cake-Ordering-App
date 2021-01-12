@@ -13,9 +13,10 @@
 			          <a class="nav-link active" aria-current="page" href="homepg.php">Home</a>
 			        </li>
 		            
+			        <!--
 			        <li class="nav-item">
-			          <a class="nav-link" href="homepg.php>Services</a> <!--the slash n has text added-->
-			        </li>
+			          <a class="nav-link" href="homepg.php">Services</a> the slash n has text added
+			        </li> -->
 		            <li class="nav-item">
 			          <a class="nav-link" href="about.php">About</a>
 			        </li>

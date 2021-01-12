@@ -39,9 +39,6 @@
 								$query=mysqli_query($con, $selectquery);
 
 								$nums=mysqli_num_rows($query); //no. of rows
-
-								//res=mysqli_fetch_array($query); 
-								//while($nums)
 								$i=1;
 								while($i<$nums)
 								{
@@ -68,7 +65,6 @@
 					</table>				
 				</div>
 			</div>
-			<br>
 			<br>
 
 
