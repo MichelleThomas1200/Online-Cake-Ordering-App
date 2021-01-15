@@ -12,8 +12,8 @@
 		  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Dancing+Script" rel="stylesheet">
 	</head>
 	<body class="container-fluid">
-		<h1 class="text-center text-danger mb-5" 
-			style="font-family: 'Abril Fatface', cursive;"> ONLINE SHOPPING CART PHP MYSQLI</h1>
+		<!-- <h1 class="text-center text-danger mb-5" 
+			style="font-family: 'Abril Fatface', cursive;"> ONLINE SHOPPING CART PHP MYSQLI</h1> --><br><br>
 	
 		<div class="row">	
 	
@@ -31,25 +31,45 @@
 		
 				$query="select CakeName, Description, image, price from cakes order by cakeID;";
 				$queryfire=mysqli_query($con, $query);
+
+				$query2="select * from Orders order by CustId;";
+				$queryfire2=mysqli_query($con, $query2);
 		
 				$num = mysqli_num_rows($queryfire);
 				if($num)
 				{
 					while($product=mysqli_fetch_array($queryfire))
 					{
+						$orderdata=mysqli_fetch_array($queryfire2);
 						//print_r($product);
 						?>
 						<div class="col-lg-3	col-md-3	col-sm-12" >	
+
 							<form>	
 								<div class="card ">	
-									<h6 class="card-title bg-info text-white p-2 ">  <?php echo $product['CakeName']; ?> </h6>
 
+									<h6 class="card-title bg-info text-white p-2 ">  <?php echo $product['CakeName']; ?> </h6>
 									<div class="card-body">	
-										<img src="<?php echo $product['image']; ?>" alt="phone" class="img-fluid mb-2"/>						
+										<img src="<?php echo $product['image']; ?>" alt="cake picture" class="img-fluid mb-2"/>						
 
 										<h6 class="card-body">  
-												&#8377; <?php echo $product['price'].".00"; ?>
+												&#8377; <?php echo $product['price'].".00"." | weight:"; ?>
+										 
+												<form method='post' action=''>
+													<input type='hidden' name='CakeID' value="<?php echo $product["CakeID"]; ?>" />
+													<input type='hidden' name='action' value="change" />
+													<select name='quantity' class='quantity' onChange="this.form.submit()">
+														<option <?php if($orderdata["weight"]==1) echo "selected";?> value="1">1</option>
+														<option <?php if($orderdata["weight"]==2) echo "selected";?> value="2">2</option>
+														<option <?php if($orderdata["weight"]==3) echo "selected";?> value="3">3</option>
+														<option <?php if($orderdata["weight"]==4) echo "selected";?> value="4">4</option>
+														<option <?php if($orderdata["weight"]==5) echo "selected";?> value="5">5</option>
+													</select>
+												</form>
 										</h6> <br>
+
+
+
 										<span>
 											<?php echo $product['Description']; ?>
 										</span>

@@ -50,7 +50,6 @@ error_reporting(E_ALL);
 											$showdata=mysqli_query($con, $showquery); //returns in array form
 											$arrdata=mysqli_fetch_array($showdata);	
 
-
 											if (isset($_POST['submit']))
 											{
 												$idupdate=$_GET['id'];
@@ -59,8 +58,6 @@ error_reporting(E_ALL);
 												$desc=$_POST['Description'];
 												$piclink=$_POST['image'];
 												$cost=$_POST['Price'];
-						
-												/*$insertquery="INSERT INTO cakes(CakeName, Description, Price, image) VALUES ('$name','$desc','$cost','$piclink')"; */
 
 												$updatequery="update cakes set CakeID='$ids', CakeName='$name', description='$desc', price='$cost' where CakeID='$idupdate';";
 
@@ -72,7 +69,8 @@ error_reporting(E_ALL);
 															alert("Row Updated");
 														</script>
 													<?php
-												}else{
+												}
+												else{
 													?>
 													<script>
 														alert("Row not updated");

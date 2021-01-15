@@ -31,6 +31,7 @@
 								<th colspan="2">Operation</th>
 							</tr>
 						</thead>
+						
 						<tbody>
 
 							<?php
@@ -39,8 +40,9 @@
 								$query=mysqli_query($con, $selectquery);
 
 								$nums=mysqli_num_rows($query); //no. of rows
+								
 								$i=1;
-								while($i<$nums)
+								while($i<=$nums)
 								{
 									$row = mysqli_fetch_array($query, MYSQLI_ASSOC);
 									//printf ("<br>%s (%s)\n", $row["CakeName"], $row["Price"]);
@@ -53,6 +55,7 @@
 										<td><?php echo $row['Price']; ?></td>
 										<td><?php echo $row['image']; ?></td>
 										<td><a href="updates.php?id=<?php echo $row['CakeID']; ?>" data-toggle="tooltip" data-placement="top" title="Update"> <i class="fa fa-edit" aria-hidden="true"></i></a></td>
+										
 										<td><a href="deletes.php?id=<?php echo $row['CakeID']; ?>" data-toggle="tooltip" data-placement="top" title="Delete"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
 									</tr>
 
@@ -76,7 +79,7 @@
 							<tr>
 								<th>Weight</th>
 								<th>Added Cost</th>
-								<th colspan="2">Operation</th>
+								<!-- <th colspan="2">Operation</th> -->
 							</tr>
 						</thead>
 
@@ -91,7 +94,7 @@
 								//$res=mysqli_fetch_array($query); 
 								//while($nums)
 								$i=1;
-								while($i<$nums)
+								while($i<=$nums)
 								{
 									$row = mysqli_fetch_array($query, MYSQLI_ASSOC);
 									//printf ("<br>%s (%s)\n", $row["CakeName"], $row["Price"]);
