@@ -13,12 +13,13 @@
 			          <a class="nav-link active" aria-current="page" href="homepg.php">Home</a>
 			        </li>
 		            
-			        <!--
+			        
 			        <li class="nav-item">
-			          <a class="nav-link" href="homepg.php">Services</a> the slash n has text added
-			        </li> -->
+			          <a class="nav-link" aria-current="page" href="usercart.php">My Cart</a>
+			        </li> 
+			        
 		            <li class="nav-item">
-			          <a class="nav-link" href="about.php">About</a>
+			          <a class="nav-link" aria-current="page" href="about.php">About</a>
 			        </li>
 			        <li>
 			        	<a href="logout.php"><button type="submit" class="btn btn-success" name="logout">Log Out</button></a>

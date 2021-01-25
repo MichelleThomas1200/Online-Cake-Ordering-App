@@ -1,6 +1,8 @@
 <?php
+//comes here from usercart.db
 
-	include 'menu.php';
+	//include 'menu.php';
+	include 'userinfo.php';
 	$query="select CakeName, Description, image, price from cakes order by cakeID;";
 	$queryfire=mysqli_query($con, $query);
 
